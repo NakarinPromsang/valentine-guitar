@@ -1,31 +1,46 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Kanit', sans-serif;
     text-align: center;
-    background-color: #ffe6e6;
+    /* พื้นหลัง gradient แบบสุ่มสีชมพู */
+    background: linear-gradient(135deg, #ffb3d9, #ff6699);
+    background-size: 200% 200%;
+    animation: gradientAnimation 6s ease infinite;
     color: #d63384;
     padding: 50px;
     overflow: hidden;
+    height: 100vh; /* ให้ความสูงของ body เติมเต็มหน้าจอ */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .container {
     max-width: 600px;
     margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-.hidden {
-    display: none;
+    background: rgba(255, 255, 255, 0.8); /* ใช้พื้นหลังโปร่งใส */
+    padding: 30px;
+    border-radius: 20px; /* ทำมุมโค้งมากขึ้น */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้ดูลึก */
+    backdrop-filter: blur(10px); /* เพิ่ม blur เบา ๆ ที่พื้นหลัง */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* เพิ่มเส้นขอบเบาๆ */
 }
 
 button {
+    font-family: 'Kanit', sans-serif; /* ใช้ฟอนต์ Kanit ในปุ่ม */
     background-color: #ff6699;
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 18px;
     margin-top: 20px;
@@ -38,8 +53,9 @@ button:hover {
 .rose {
     position: fixed;
     top: -50px;
-    font-size: 30px;
-    color: red;
+    width: 40px;
+    height: 40px;
+    background-size: cover;
     animation: fall linear 4s infinite;
 }
 
